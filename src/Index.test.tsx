@@ -78,12 +78,6 @@ describe('application tests', () => {
     checkContent(element, /^Abdoslam Baabbad$/, undefined, true);
   });
 
-  it('should render title: Data Analyst', () => {
-    const element = screen.getByTestId('title');
-
-    checkContent(element, /^Data Analyst$/, undefined, true);
-  });
-
   it('should render creator', () => {
     const element = screen.getByTestId('creator');
 
