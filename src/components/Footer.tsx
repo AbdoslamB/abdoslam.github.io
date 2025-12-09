@@ -37,13 +37,13 @@ export const Footer = () => {
         {'Designed and built by '}
         <F.Link
           data-v2="creator"
-          aria-label="Adam Alston's personal website (opens in new window)"
+          aria-label="Abdoslam Baabbad's personal website (opens in new window)"
           href="http://abdoslamB.github.io/"
           rel="noopener noreferrer"
           target="_blank"
           $theme={theme}
         >
-          {'Adam Alston'}
+          {'Abdoslam Baabbad'}
         </F.Link>
         {!isMobile && (
           <>
