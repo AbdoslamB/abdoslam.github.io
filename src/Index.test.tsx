@@ -6,7 +6,6 @@ import '__mocks__/matchMedia';
 import { App } from 'App/App';
 import { AppProvider, reducer } from 'App/AppContext';
 import { themes } from 'appearance';
-import { Footer } from 'components';
 
 configure({ testIdAttribute: 'data-v2' });
 
@@ -78,18 +77,6 @@ describe('application tests', () => {
     checkContent(element, /^Abdoslam Baabbad$/, undefined, true);
   });
 
-  it('should render creator', () => {
-    const element = screen.getByTestId('creator');
-
-    checkContent(element, /^Abdoslam Baabbad$/, 'http://abdoslamB.github.io/');
-  });
-
-  it('should render link to source code', () => {
-    const element = screen.getByTestId('source');
-
-    checkContent(element, /^Source$/, 'https://github.com/AbdoslamB/abdoslamB.github.io');
-  });
-
   it('should render GitHub button', () => {
     const parent = screen.getByTestId('button-GitHub');
     const child = screen.getByTestId('GitHub');
@@ -137,33 +124,6 @@ describe('application tests', () => {
     // the light theme should be visible
     expect(toggle).not.toBeChecked();
     expect(particles).toHaveStyle({ backgroundColor: '#fff' });
-  });
-
-  it('should render full footer on desktop', () => {
-    const footer = screen.getByTestId('footer');
-
-    expect(footer).toHaveTextContent(
-      /^Designed and built by Abdoslam Baabbad \| Source$/,
-    );
-  });
-});
-
-describe('app context tests', () => {
-  it('should render partial footer on mobile', async () => {
-    await act(() =>
-      render(
-        <AppProvider
-          config={mockState.config}
-          isMobile={true}
-          children={<Footer />}
-        />,
-      ),
-    );
-
-    // partial footer should now be visible
-    const footer = screen.getByTestId('footer');
-
-    expect(footer).toHaveTextContent(/^Designed and built by Abdoslam Baabbad$/);
   });
 
   describe('reducer tests', () => {

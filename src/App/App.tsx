@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Buttons, Content, Footer, Particles, Toggle } from 'components';
+import { Buttons, Content, Particles, Toggle } from 'components';
 
 import './App.scss';
 import { AppProvider } from './AppContext';
@@ -33,7 +33,6 @@ export const App = () => {
         <Toggle />
         <Content />
         <Buttons />
-        <Footer />
         <Particles />
       </main>
     </AppProvider>
